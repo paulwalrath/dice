@@ -1914,7 +1914,7 @@ func evalJSONOBJLEN(args []string, store *dstore.Store) *EvalResponse {
 	if obj == nil {
 		return &EvalResponse{
 			Result: nil,
-			Error:  nil,
+			Error:  diceerrors.ErrKeyDoesNotExist,
 		}
 	}
 
@@ -1947,7 +1947,7 @@ func evalJSONOBJLEN(args []string, store *dstore.Store) *EvalResponse {
 			}
 			return &EvalResponse{
 				Result: nil,
-				Error:  nil,
+				Error:  diceerrors.ErrWrongTypeOperation,
 			}
 		}
 		return &EvalResponse{
